@@ -1,0 +1,12 @@
+upstream project {
+    server project_web;
+}
+
+server {
+    listen 80 default_server;
+    server_name _;
+    location / {
+        include     /etc/nginx/proxy_params;
+        proxy_pass  http://project;
+    }
+}

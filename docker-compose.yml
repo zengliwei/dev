@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+
+    router:
+        build: ./router
+        container_name: router
+        restart: on-failure
+        networks:
+            - net
+        ports:
+            - ${PORT}:80
+        volumes:
+            - ${CONFIG_DIR}/router:/etc/nginx/conf.d
+
+networks:
+
+    net:

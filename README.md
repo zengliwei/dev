@@ -3,7 +3,7 @@
 
 ## Contents
 
-- To create a network named `app_net`.
+- To create a network named `app_net`
 - To create a router for proxying requests to local containers
 
 

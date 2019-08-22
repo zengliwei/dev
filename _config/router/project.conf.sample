@@ -3,7 +3,7 @@ upstream project {
 }
 
 server {
-    listen 80 default_server;
+    listen 80;
     server_name _;
     location / {
         include     /etc/nginx/proxy_params;

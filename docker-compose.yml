@@ -2,17 +2,26 @@ version: "3"
 
 services:
 
-    router:
-        build: ./router
-        container_name: router
-        restart: on-failure
-        networks:
-            - net
-        ports:
-            - ${PORT}:80
-        volumes:
-            - ${CONFIG_DIR}/router:/etc/nginx/conf.d
+  mailer:
+    image: mailhog/mailhog
+    container_name: mailer
+    restart: ${RESTART}
+    networks:
+      - net
+    ports:
+      - ${MAILER_PORT}:8025
+
+  router:
+    build: ./router
+    container_name: router
+    restart: ${RESTART}
+    networks:
+      - net
+    ports:
+      - ${ROUTER_PORT}:80
+    volumes:
+      - ${ROUTER_CONFIG_DIR}/router:/etc/nginx/conf.d
 
 networks:
 
-    net:
+  net:

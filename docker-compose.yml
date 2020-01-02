@@ -4,7 +4,7 @@ services:
 
   mailer:
     image: mailhog/mailhog
-    container_name: mailer
+    container_name: ${PREFIX}_mailer
     restart: ${RESTART}
     networks:
       - net
@@ -16,7 +16,7 @@ services:
       context: ./router
       args:
         ssh_pswd: ${ROUTER_SSH_PSWD}
-    container_name: router
+    container_name: ${PREFIX}_router
     restart: ${RESTART}
     networks:
       - net

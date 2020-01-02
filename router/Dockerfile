@@ -3,6 +3,13 @@ FROM nginx
 COPY ./nginx/* /etc/nginx/
 
 #
+# Use Specified APT Sources
+#
+ARG apt_source
+RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak
+COPY "./apt_sources/${apt_source}" /etc/apt/sources.list
+
+#
 # Install SSH
 #
 ARG ssh_pswd=root

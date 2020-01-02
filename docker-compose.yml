@@ -12,6 +12,7 @@ services:
       - ${MAILER_PORT}:8025
 
   router:
+    image: dev-router
     build:
       context: ./router
       args:

@@ -3,8 +3,8 @@
 
 ## Contents
 
-- To create a network named `app_net`
-- To create a router for proxying requests to local containers
+- Create a network named `dev_net`
+- Create a router for proxying requests to local containers with SSH access
 
 
 ## Images

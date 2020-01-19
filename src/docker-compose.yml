@@ -16,7 +16,6 @@ services:
     build:
       context: ./router
       args:
-        apt_source: ${APT_SOURCE}
         ssh_pswd: ${ROUTER_SSH_PSWD}
     container_name: ${COMPOSE_PROJECT_NAME}_router
     restart: ${RESTART}

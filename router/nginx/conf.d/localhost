@@ -14,7 +14,7 @@ server {
 
     location / {
         include proxy_params;
-        proxy_pass http://dev_mailer;
+        proxy_pass http://dev_mailer:8025;
     }
 }
 

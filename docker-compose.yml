@@ -15,7 +15,6 @@ services:
     restart: ${RESTART}
     environment:
       MYSQL_ROOT_PASSWORD: ${DB_PSWD}
-      MYSQL_DATABASE: phpmyadmin
     networks:
       - net
 
@@ -27,7 +26,6 @@ services:
     restart: ${RESTART}
     environment:
       PMA_ARBITRARY: 1
-      PMA_PMDB: phpmyadmin
       PMA_HOST: ${COMPOSE_PROJECT_NAME}_mysql
       PMA_USER: root
       PMA_PASSWORD: ${DB_PSWD}

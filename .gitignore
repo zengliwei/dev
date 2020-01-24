@@ -1,2 +1,3 @@
-config/*
-projects/*
+/config/*
+!/config/router/localhost
+/projects/*

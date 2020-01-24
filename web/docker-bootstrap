@@ -1,0 +1,6 @@
+#!/bin/sh
+
+/etc/init.d/cron start;
+/etc/init.d/nginx start;
+/etc/init.d/ssh start;
+/usr/local/sbin/php-fpm;

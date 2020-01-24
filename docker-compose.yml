@@ -2,15 +2,6 @@ version: "3"
 
 services:
 
-  mailer:
-    image: mailhog/mailhog
-    container_name: ${COMPOSE_PROJECT_NAME}_mailer
-    restart: ${RESTART}
-    networks:
-      - net
-    ports:
-      - ${MAILER_PORT}:8025
-
   router:
     image: dev-router
     build:

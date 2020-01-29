@@ -10,7 +10,7 @@ echo rename %CD%\config\router\*.conf *. > %UserProfile%\AppData\Roaming\Microso
 ::
 set hostMappingSet=0
 for /f "tokens=1,2" %%i in ( %SystemRoot%\System32\drivers\etc\hosts ) do (
-  if %%j == localhost set hostMappingSet=1
+  if %%j == db.localhost set hostMappingSet=1
 )
 if %hostMappingSet% == 1 exit
 echo. >> %SystemRoot%\System32\drivers\etc\hosts

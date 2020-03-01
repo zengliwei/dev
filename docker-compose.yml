@@ -39,7 +39,7 @@ services:
     container_name: ${COMPOSE_PROJECT_NAME}_web
     tty: true
     build:
-      context: ./web
+      context: ./images/web
       args:
         SSH_PSWD: ${WEB_SSH_PSWD}
     depends_on:
@@ -51,7 +51,7 @@ services:
   router:
     image: dev-router
     build:
-      context: ./router
+      context: ./images/router
       args:
         ssh_pswd: ${ROUTER_SSH_PSWD}
     container_name: ${COMPOSE_PROJECT_NAME}_router

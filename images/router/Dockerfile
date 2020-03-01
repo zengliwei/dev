@@ -14,6 +14,12 @@ RUN apt-get update \
     && sed -i 's/www-data:\/var\/www:\/usr\/sbin\/nologin/www-data:\/var\/www:\/bin\/bash/g' /etc/passwd \
     && echo "root:${ssh_pswd}" | chpasswd
 
+#
+# Install Openssl
+#
+RUN apt-get update \
+    && apt-get -y install openssl
+
 COPY ./docker-bootstrap /usr/local/bin/
 
 EXPOSE 22

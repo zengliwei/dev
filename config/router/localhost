@@ -14,8 +14,6 @@ server {
 
     location / {
         include proxy_params;
-        proxy_set_header Upgrade $http_upgrade;
-        proxy_set_header Connection 'upgrade';
         proxy_pass http://dev_mailer:8025;
     }
 }

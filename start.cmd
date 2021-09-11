@@ -15,7 +15,6 @@ for /f "tokens=1,2" %%i in ( %SystemRoot%\System32\drivers\etc\hosts ) do (
 if %hostMappingSet% == 0 (
   echo. >> %SystemRoot%\System32\drivers\etc\hosts
   echo. >> %SystemRoot%\System32\drivers\etc\hosts
-  echo 127.0.0.1 localhost >> %SystemRoot%\System32\drivers\etc\hosts
   echo 127.0.0.1 db.localhost >> %SystemRoot%\System32\drivers\etc\hosts
   echo 127.0.0.1 mail.localhost >> %SystemRoot%\System32\drivers\etc\hosts
 )

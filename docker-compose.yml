@@ -9,42 +9,14 @@ services:
     networks:
       - net
 
-  mysql:
-    image: mysql:5.7
-    container_name: ${COMPOSE_PROJECT_NAME}_mysql
-    restart: ${RESTART}
-    environment:
-      MYSQL_ROOT_PASSWORD: ${DB_PSWD}
-    networks:
-      - net
-
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
     container_name: ${COMPOSE_PROJECT_NAME}_phpmyadmin
-    depends_on:
-      - mysql
     restart: ${RESTART}
     environment:
       PMA_ARBITRARY: 1
-      PMA_HOST: ${COMPOSE_PROJECT_NAME}_mysql
-      PMA_USER: root
-      PMA_PASSWORD: ${DB_PSWD}
     volumes:
       - ${PHPMYADMIN_CONFIG_DIR}:/etc/phpmyadmin
-    networks:
-      - net
-
-  web:
-    image: dev-web
-    container_name: ${COMPOSE_PROJECT_NAME}_web
-    tty: true
-    build:
-      context: ./images/web
-      args:
-        SSH_PSWD: ${WEB_SSH_PSWD}
-    depends_on:
-      - mysql
-    restart: ${RESTART}
     networks:
       - net
 
@@ -58,7 +30,6 @@ services:
     depends_on:
       - mailer
       - phpmyadmin
-      - web
     restart: ${RESTART}
     networks:
       - net

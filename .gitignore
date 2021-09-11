@@ -2,4 +2,3 @@
 !/config/router/localhost
 !/config/phpmyadmin/config.inc.php
 /projects/*
-/src

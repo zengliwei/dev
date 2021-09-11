@@ -13,6 +13,9 @@ RUN apt-get update \
     && sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config \
     && sed -i 's/www-data:\/var\/www:\/usr\/sbin\/nologin/www-data:\/var\/www:\/bin\/bash/g' /etc/passwd \
     && echo "root:${ssh_pswd}" | chpasswd
+COPY linux/.bashrc /root/
+COPY linux/.bashrc /var/www/
+COPY linux/.profile /var/www/
 
 #
 # Install Openssl

@@ -1,14 +1,4 @@
 server {
-    listen 80 default_server;
-    server_name localhost;
-
-    location / {
-        include proxy_params;
-        proxy_pass http://dev_web;
-    }
-}
-
-server {
     listen 80;
     server_name mailer.localhost;
 

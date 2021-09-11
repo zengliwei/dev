@@ -3,7 +3,7 @@
 ::::
 :: Create batch down site script
 ::
-echo rename %CD%\config\router\*.conf *. > %UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\stop-docker-projects.cmd
+echo rename %CD%\config\router\*.no.conf *. > %UserProfile%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\stop-docker-projects.cmd
 
 ::::
 :: Add host mapping

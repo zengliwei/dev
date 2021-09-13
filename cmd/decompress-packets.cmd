@@ -19,6 +19,8 @@ for /f %%f in ('dir /b .\src') do (
     )
     endLocal
 )
+goto :EOF
+
 
 ::::
 :: Copy file to docker container and make sure it is completely

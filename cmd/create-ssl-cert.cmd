@@ -7,18 +7,17 @@
 set domain=%~1
 set configPath=%~dp0..\config\ssl
 
-for /f "tokens=1* delims=:" %%k in ('findstr /n .* .\config\router\ssl.conf') do (
+setLocal enableDelayedExpansion
+(for /f "tokens=1* delims=:" %%k in ('findstr /n .* .\config\router\ssl.conf') do (
     set "line=%%l"
-    setLocal enableDelayedExpansion
-        if "!line!" == "" (
-        echo.>> ssl.conf.tmp
+    if "!line!" == "" (
+        echo;
     ) else (
         set line=!line:project_domain=%domain%!
-        echo !line!>> ssl.conf.tmp
+        echo;!line!
     )
-    endLocal
-)
-move ssl.conf.tmp %configPath%\ext.cnf
+))>%configPath%\ext.cnf
+endLocal
 
 docker exec dev_router /usr/bin/openssl req -x509 -nodes -sha256 -newkey rsa:2048 -outform PEM -days 3650 -addext "basicConstraints=critical, CA:true" -subj "/C=CN/ST=State/L=Locality/O=Organization/CN=Dev - %domain%" -keyout ca.pvk -out /etc/ssl/certs/%domain%.browser.cer
 docker exec dev_router /usr/bin/openssl req -nodes -sha256 -newkey rsa:2048 -out server.req -keyout /etc/ssl/certs/%domain%.pvk -subj "/C=CN/ST=State/L=Locality/O=Organization/CN=%domain%"

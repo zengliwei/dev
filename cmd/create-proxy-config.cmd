@@ -15,19 +15,18 @@ for /f %%i in ( 'dir /b %configPath%' ) do (
 )
 
 if %proxySet% == 0 (
-    for /f "tokens=1* delims=:" %%k in ('findstr /n .* .\config\router\proxy.conf') do (
+    setLocal enableDelayedExpansion
+    (for /f "tokens=1* delims=:" %%k in ('findstr /n .* .\config\router\proxy.conf') do (
         set "line=%%l"
-        setLocal enableDelayedExpansion
         if "!line!" == "" (
-            echo.>> proxy.conf.tmp
+            echo;
         ) else (
             set line=!line:project_name=%project%!
             set line=!line:project_domain=%domain%!
-            echo !line!>> proxy.conf.tmp
+            echo;!line!
         )
-        endLocal
-    )
-    move proxy.conf.tmp %configPath%\%domain%
+    ))>%configPath%\%domain%
+    endLocal
 
     call %~dp0create-ssl-cert.cmd "%domain%"
 )

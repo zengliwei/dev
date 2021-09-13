@@ -18,6 +18,6 @@ for /f "tokens=1 delims=:" %%i in ('findstr /n /c:"'host'      => '%project%_mys
             echo;%%m
         )
     ))>config.user.inc.php.tmp
-    move /y config.user.inc.php.tmp %configFile%
+    move /y config.user.inc.php.tmp %configFile% >nul
 )
 endLocal

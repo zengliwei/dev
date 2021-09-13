@@ -11,7 +11,7 @@ set hostFile=%SystemRoot%\System32\drivers\etc\hosts
     echo %%i
 ))>lines.tmp
 
-copy %hostFile% hosts.tmp
+copy %hostFile% hosts.tmp >nul
 
 setLocal enableDelayedExpansion
 (for /f "tokens=1* delims=:" %%l in ('findstr /n .* hosts.tmp') do (

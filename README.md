@@ -1,6 +1,6 @@
 # Multiple Projects Development Environment
 
-## Issues & Solution
+## Purpose & Solution
 
 Developing with multiple PHP projects under Windows may meet several problems:
 - Let all projects stay under a same domain will meet conflict of cookies and session

@@ -1,6 +1,6 @@
 # Multiple Projects Development Environment
 
-![platform](https://img.shields.io/badge/platform-windows%20%7C%20docker-lightgrey)
+![platform](https://img.shields.io/badge/platform-windows%20&%20docker-lightgrey)
 
 ## Purpose & Solution
 

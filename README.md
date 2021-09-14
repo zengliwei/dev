@@ -1,5 +1,7 @@
 # Multiple Projects Development Environment
 
+![platform](https://img.shields.io/badge/platform-windows | docker-lightgrey)
+
 ## Purpose & Solution
 
 Developing with multiple PHP projects under Windows may meet several problems:
@@ -36,7 +38,7 @@ To solve such issues and save time with setting up a new project, I built up a f
 
 ### Setup a project
 
-1. Download one of the containers from the [Environment List](#environment-List) and decompress it into `projects` folder of the framework
+1. Download one of the containers from the [Environment List](#environment-list) and decompress it into `projects` folder of the framework
 2. Modify the folder name for your project
 3. Modify .env file to setup project name and domain name
 4. Run the start.cmd
@@ -48,7 +50,7 @@ To solve such issues and save time with setting up a new project, I built up a f
 - [dev-php-5.3](https://github.com/zengliwei/dev-php-5.x/tree/5.3)
 - [dev-php-5.6](https://github.com/zengliwei/dev-php-5.x/tree/5.6)
 - [dev-php-7.4](https://github.com/zengliwei/dev-php-7.x/tree/7.4)
-- [dev-magento](https://magento2cn.github.io/notes/appendices/dev-windows/magento.html) - Support Magento 1.9 to 2.4
+- [dev-magento](https://github.com/zengliwei/dev-magento) - Support Magento 1.9 to 2.4
 - [dev-drupal-9.x](https://github.com/zengliwei/dev-drupal/tree/9.x)
 - [dev-jupyter-tensorflow](https://github.com/zengliwei/dev-jupyter/tree/tensorflow)
 - [dev-rabbitmq](https://github.com/zengliwei/dev-rabbitmq)

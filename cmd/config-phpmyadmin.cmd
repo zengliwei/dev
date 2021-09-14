@@ -5,6 +5,8 @@
 @echo off
 
 set project=%~1
+set dbUser=%~2
+set dbPass=%~3
 set configFile=%~dp0..\config\phpmyadmin\config.user.inc.php
 set phpMyAdminSet=0
 

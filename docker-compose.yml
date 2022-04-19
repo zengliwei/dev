@@ -36,6 +36,7 @@ services:
       - network
     ports:
       - ${ROUTER_PORT}:80
+      - ${ROUTER_SOCKET_PORT}:8080
       - ${ROUTER_SSL_PORT}:443
       - ${ROUTER_SSH_PORT}:22
     volumes:
